@@ -12,17 +12,23 @@ function appendSuffix(action, suffix, error) {
 /**
  * Takes an action string constant or action object and returns its success counterpart
  * @param {string|object} action The action constant or an action object
- * @returns The success action
+ * @returns {string|object} The success variant of the action constant or object
  */
 function success(action) { return appendSuffix(action, 'SUCCESS'); }
 
 /**
  * Takes an action string constant or action object and returns its failure counterpart
- * @param {string|object} action The action constant or an action object
- * @returns The failure action
+ * @param {string} action The action constant or an action object
+ * @param {Error} error The error that caused the failure
+ * @returns {string|object} The failure variant of the action constant or object
+ */
+/**
+ * Takes an action string constant or action object and returns its failure counterpart
+ * @param {object} action The action constant or an action object
+ * @param {Error} error The error that caused the failure
+ * @returns {string|object} The failure variant of the action constant or object
  */
 function failure(action, error) { return appendSuffix(action, 'FAILURE', error); }
-
 
 /**
  * Creates a redux thunk for an action creator and an async call.
@@ -32,11 +38,11 @@ function failure(action, error) { return appendSuffix(action, 'FAILURE', error);
  * @param {function} asyncCall The async function to execute when the action is dispatched.
  * Its return value will be the payload on the success reducer
  * async (payload)=> { return successReducerPayload }
- * @param {function} afterSuccess The function to execute after the action succeeds.
+ * @param {function} [afterSuccess] The function to execute after the action succeeds.
  * (action, result, dispatch)=> {}
- * @param {function} afterFailure The function to execute after the action fails.
+ * @param {function} [afterFailure] The function to execute after the action fails.
  * (action, error, dispatch)=> {}
- * @returns The redux thunk for the action
+ * @returns {function} The redux thunk for the action
  */
 function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure) {
   return payload => async (dispatch) => {
