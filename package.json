@@ -1,10 +1,13 @@
 {
-  "name": "react-redux-asyncaction",
-  "version": "1.0.0",
+  "name": "react-redux-async-action",
+  "version": "0.0.1",
   "description": "Helper methods for dealing with boilerplate of working with actions that have an eventual outcome",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "test": "mocha",
+    "clean": "rimraf ./dist",
+    "build": "rollup -c",
     "coverage": "nyc --reporter=text mocha"
   },
   "keywords": [
@@ -17,6 +20,8 @@
   "author": "German Paniagua <ggpaniagua@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^5.16.0",
@@ -24,6 +29,9 @@
     "eslint-plugin-import": "^2.17.3",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.13.1",
+    "rollup-plugin-babel": "^4.3.2",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0"
   },
