@@ -1,14 +1,20 @@
 {
   "name": "react-redux-async-action",
   "version": "0.0.1",
-  "description": "Helper methods for dealing with boilerplate of working with actions that have an eventual outcome",
+  "description": "Helper methods for dealing with boilerplate of working with react-redux actions that have an eventual outcome",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "mocha",
-    "clean": "rimraf ./dist",
+    "prebuild": "npm run build:clean",
+    "build:clean": "rimraf ./dist",
     "build": "rollup -c",
-    "coverage": "nyc --reporter=text mocha"
+    "coverage": "nyc --reporter=text mocha",
+    "lint": "eslint ./src",
+    "prepublish": "npm run lint && npm run coverage && npm run build"
   },
   "keywords": [
     "react",

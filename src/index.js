@@ -18,13 +18,7 @@ function success(action) { return appendSuffix(action, 'SUCCESS'); }
 
 /**
  * Takes an action string constant or action object and returns its failure counterpart
- * @param {string} action The action constant or an action object
- * @param {Error} error The error that caused the failure
- * @returns {string|object} The failure variant of the action constant or object
- */
-/**
- * Takes an action string constant or action object and returns its failure counterpart
- * @param {object} action The action constant or an action object
+ * @param {string|object} action The action constant or an action object
  * @param {Error} error The error that caused the failure
  * @returns {string|object} The failure variant of the action constant or object
  */
