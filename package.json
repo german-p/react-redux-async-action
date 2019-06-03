@@ -4,7 +4,8 @@
   "description": "Helper methods for dealing with boilerplate of working with actions that have an eventual outcome",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "nyc --reporter=text mocha"
   },
   "keywords": [
     "react",
@@ -22,6 +23,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0"
   },

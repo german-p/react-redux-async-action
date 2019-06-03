@@ -6,7 +6,7 @@ function appendSuffix(action, suffix, error) {
     if (error) a.error = { stack: error.stack, message: error.message };
     return a;
   }
-  return action;
+  throw new Error('action parameter is invalid. Please provide a string or an action object with the action type');
 }
 
 /**
