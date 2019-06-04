@@ -41,5 +41,16 @@
     "sinon": "^7.3.2",
     "sinon-chai": "^3.3.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/german-p/react-redux-async-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/german-p/react-redux-async-action/issues"
+  },
+  "homepage": "https://github.com/german-p/react-redux-async-action#readme"
 }
