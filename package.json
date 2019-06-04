@@ -1,6 +1,6 @@
 {
   "name": "react-redux-async-action",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper methods for dealing with boilerplate of working with react-redux actions that have an eventual outcome",
   "main": "dist/index.js",
   "module": "dist/index.js",
