@@ -28,8 +28,8 @@ But we also need the sucess and failure variants to dispatch when the call compl
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 
-export const fetchDataSuccess = (data)=> ({ type: FETCH_DATA, data });
-export const fetchDataFailure = (error)=> ({ type: FETCH_DATA, error });
+export const fetchDataSuccess = (data)=> ({ type: FETCH_DATA_SUCCESS, data });
+export const fetchDataFailure = (error)=> ({ type: FETCH_DATA_FAILURE, error });
 ```
 
 So if we were using thunks, we would need something like this:
@@ -69,7 +69,7 @@ switch(action.type) {
 //...  
 }
 ```
-This become quite repetive when you have different async actions on your application and this aims to alliviate that.
+This becomes quite repetive when you have different async actions on your application and this aims to alliviate that.
 
 
 # Usage
@@ -160,5 +160,5 @@ function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure)
 |---------|----|-----------|
 |actionCreator|function(payload)|The action creator function to create a thunk for
 |asyncCall|function(payload)|The async function to execute when the action is dispatched<br/>its return value will be provided to the _SUCCESS action as its payload
-|afterSuccess|function(action, result, dispatch)|(optional) The function to execute after the async call succeeds and _SUCCESS action is dispatched<br/>**action**: the originally dispatched action<br/>**result**: the return value of the asyncCall function<br/>**dispatch**: the dispatch function in case you want to dispatch additional actions
-|afterFailure|function(action, error, dispatch)|(optional) The function to execute after the async call fails and _FAILURE action is dispatched<br/>**action**: the originally dispatched action<br/>**error**: the error caught from the asyncCall invocation<br/>**dispatch**: the dispatch function in case you want to dispatch additional actions
+|afterSuccess|function(action, result, dispatch)|_(optional)_ The function to execute after the async call succeeds and _SUCCESS action is dispatched<br/>**action**: the originally dispatched action<br/>**result**: the return value of the asyncCall function<br/>**dispatch**: the dispatch function in case you want to dispatch additional actions
+|afterFailure|function(action, error, dispatch)|_(optional)_ The function to execute after the async call fails and _FAILURE action is dispatched<br/>**action**: the originally dispatched action<br/>**error**: the error caught from the asyncCall invocation<br/>**dispatch**: the dispatch function in case you want to dispatch additional actions
