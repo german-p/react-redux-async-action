@@ -23,7 +23,7 @@
     "thunk",
     "async"
   ],
-  "author": "German Paniagua <ggpaniagua@gmail.com>",
+  "author": "Germán Paniagua <ggpaniagua@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
