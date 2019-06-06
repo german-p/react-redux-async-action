@@ -32,9 +32,9 @@ function failure(action, error) { return appendSuffix(action, 'FAILURE', error);
  * @param {function} asyncCall The async function to execute when the action is dispatched.
  * Its return value will be the payload on the success reducer
  * async (payload)=> { return successReducerPayload }
- * @param {function} [afterSuccess] The function to execute after the action succeeds.
+ * @param {function} [afterSuccess] The function to execute after the async call succeeds.
  * (action, result, dispatch)=> {}
- * @param {function} [afterFailure] The function to execute after the action fails.
+ * @param {function} [afterFailure] The function to execute after the async call fails.
  * (action, error, dispatch)=> {}
  * @returns {function} The redux thunk for the action
  */
