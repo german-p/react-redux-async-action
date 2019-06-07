@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/german-p/react-redux-async-action.svg)](https://travis-ci.org/german-p/react-redux-async-action) 
 [![Coverage Status](https://coveralls.io/repos/github/german-p/react-redux-async-action/badge.svg?branch=master)](https://coveralls.io/github/german-p/react-redux-async-action?branch=master)
-![npm](https://img.shields.io/npm/v/react-redux-async-action.svg)
+[![npm](https://img.shields.io/npm/v/react-redux-async-action.svg)](https://www.npmjs.com/package/react-redux-async-action)
 ![NPM](https://img.shields.io/npm/l/react-redux-async-action.svg)
 
 A set of helper functions to reduce the boilerplate of working with redux actions that trigger an async call and end up dispatching a sucess or failure of said action upon completion
