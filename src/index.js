@@ -14,7 +14,7 @@ function appendSuffix(action, suffix, error) {
  * @param {string|object} action The action constant or an action object
  * @returns {string|object} The success variant of the action constant or object
  */
-function success(action) { return appendSuffix(action, 'SUCCESS'); }
+export function success(action) { return appendSuffix(action, 'SUCCESS'); }
 
 /**
  * Takes an action string constant or action object and returns its failure counterpart
@@ -22,7 +22,7 @@ function success(action) { return appendSuffix(action, 'SUCCESS'); }
  * @param {Error} error The error that caused the failure
  * @returns {string|object} The failure variant of the action constant or object
  */
-function failure(action, error) { return appendSuffix(action, 'FAILURE', error); }
+export function failure(action, error) { return appendSuffix(action, 'FAILURE', error); }
 
 /**
  * Creates a redux thunk for an action creator and an async call.
@@ -38,7 +38,7 @@ function failure(action, error) { return appendSuffix(action, 'FAILURE', error);
  * (action, error, dispatch)=> {}
  * @returns {function} The redux thunk for the action
  */
-function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure) {
+export function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure) {
   return payload => async (dispatch) => {
     const action = actionCreator(payload);
     dispatch(action);
@@ -54,9 +54,3 @@ function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure) {
     if (afterSuccess) afterSuccess(action, result, dispatch);
   };
 }
-
-module.exports = {
-  success,
-  failure,
-  asThunk,
-};

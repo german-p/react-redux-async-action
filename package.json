@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Helper methods for dealing with boilerplate of working with react-redux actions that have an eventual outcome",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "dist"
   ],
@@ -12,7 +12,8 @@
     "prebuild": "npm run build:clean",
     "build:clean": "rimraf ./dist",
     "build": "rollup -c",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc --reporter=text mocha",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src",
     "prepublish": "npm run lint && npm run test && npm run build"
   },
