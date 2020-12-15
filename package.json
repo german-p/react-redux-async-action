@@ -10,13 +10,13 @@
   "sideEffects": false,
   "scripts": {
     "test": "mocha --require @babel/register",
-    "prebuild": "npm run build:clean",
+    "prebuild": "yarn build:clean",
     "build:clean": "rimraf ./dist",
     "build": "rollup -c",
     "coverage": "nyc --require @babel/register --reporter=text mocha",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc yarn test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src",
-    "prepare": "npm run lint && npm run test && npm run build"
+    "prepare": "yarn lint && yarn test && yarn build"
   },
   "keywords": [
     "react",
