@@ -10,8 +10,12 @@ A set of helper functions to reduce the boilerplate of working with redux action
 ## Installation:
 
 ```
-npm install react-redux-async-action
+npm install --save react-redux-async-action
 ```
+```
+yarn add react-redux-async-action
+```
+
 
 ## Motivation
 
