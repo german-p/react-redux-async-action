@@ -16,7 +16,7 @@
     "coverage": "nyc --require @babel/register --reporter=text mocha",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src",
-    "prepublish": "npm run lint && npm run test && npm run build"
+    "prepare": "npm run lint && npm run test && npm run build"
   },
   "keywords": [
     "react",
@@ -35,7 +35,7 @@
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.17.3",
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",

@@ -1,4 +1,3 @@
-
 function appendSuffix(action, suffix, error) {
   if (typeof action === 'string') return `${action}_${suffix}`;
   if (Reflect.has(action, 'type')) {
@@ -39,7 +38,7 @@ export function failure(action, error) { return appendSuffix(action, 'FAILURE', 
  * @returns {function} The redux thunk for the action
  */
 export function asThunk(actionCreator, asyncCall, afterSuccess, afterFailure) {
-  return payload => async (dispatch) => {
+  return (payload) => async (dispatch) => {
     const action = actionCreator(payload);
     dispatch(action);
     let result;
